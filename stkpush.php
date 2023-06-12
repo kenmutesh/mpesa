@@ -2,6 +2,8 @@
 //INCLUDE THE ACCESS TOKEN FILE
 include 'accessToken.php';
 
+
+
 date_default_timezone_set('Africa/Nairobi');
 $processrequestUrl = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 $callbackurl = 'https://kariukijames.com/pesa/callback.php';
@@ -10,7 +12,8 @@ $BusinessShortCode = '174379';
 $Timestamp = date('YmdHis');
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
-$phone = '254703393597';
+// $phone = '254703393597';
+$phone = $_GET['phone'];
 $money = '1';
 $PartyA = $phone;
 $PartyB = '254708374149';
